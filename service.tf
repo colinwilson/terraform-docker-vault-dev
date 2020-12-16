@@ -9,9 +9,9 @@ resource "docker_service" "vault-dev" {
       args = ["server"] # automatically loads mounted vault-config.hcl
 
       env = {
-        VAULT_ADDR = "http://127.0.0.1:8200"
+        VAULT_ADDR     = "http://127.0.0.1:8200"
         VAULT_API_ADDR = "http://127.0.0.1:8200"
-        SKIP_SETCAP = true
+        SKIP_SETCAP    = true
       }
 
       labels {
@@ -36,7 +36,7 @@ resource "docker_service" "vault-dev" {
 
       labels {
         label = "traefik.http.routers.vault-dev.tls.certresolver"
-        value = "letsEncrypt"
+        value = var.live_cert == false ? "letsEncryptStaging" : "letsEncrypt"
       }
 
       configs {

@@ -1,12 +1,18 @@
 # Required variables
 variable "hostname" {
   type        = string
-  description = "Hostname for traefik route"
+  description = "Hostname for Vault route."
+}
+
+variable "live_cert" {
+  type        = bool
+  description = "Deploy Vault with a production (live) or staging SSL certificate."
+  default     = false
 }
 
 # Optional variables
 variable "networks" {
-  type        = list
+  type        = list(string)
   description = "List of networks to connect Vault to."
   default     = ["traefik"]
 }
