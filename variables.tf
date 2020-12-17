@@ -17,6 +17,12 @@ variable "networks" {
   default     = ["traefik"]
 }
 
+variable "enable_ui" {
+  type        = bool
+  description = "Enable the Vault web-based user interface (UI)"
+  default     = true
+}
+
 variable "image_version" {
   type        = string
   description = "Vault Docker image version."
