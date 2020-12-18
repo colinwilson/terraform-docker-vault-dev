@@ -23,7 +23,7 @@ variable "enable_ui" {
   default     = true
 }
 
-variable "image_version" {
+variable "vault_version" {
   type        = string
   description = "Vault Docker image version."
   default     = "1.6.0"

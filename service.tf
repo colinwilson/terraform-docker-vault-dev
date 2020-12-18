@@ -4,7 +4,7 @@ resource "docker_service" "vault-dev" {
 
   task_spec {
     container_spec {
-      image = "vault:${var.image_version}"
+      image = "vault:${var.vault_version}"
 
       args = ["server"] # automatically loads mounted vault-config.hcl
 
