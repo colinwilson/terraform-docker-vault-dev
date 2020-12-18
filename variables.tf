@@ -26,5 +26,5 @@ variable "enable_ui" {
 variable "vault_version" {
   type        = string
   description = "Vault Docker image version."
-  default     = "1.6.0"
+  default     = "1.6.1"
 }
